@@ -1,0 +1,76 @@
+<ion-header  >
+    <ion-item >
+        <ion-toggle justify="space-between" class="ion-padding"  (click)="startScan()">
+            <ion-title>Blue-Tools</ion-title>
+        </ion-toggle>
+    </ion-item>
+</ion-header>
+
+<ion-content *ngIf="active" [fullscreen]="true">
+  <span id="header">
+      Searching...
+  </span>
+  <div class="loader"><ion-icon name="bluetooth-outline" class="icon" (click)="startScan()"></ion-icon>
+      <span></span>
+  </div>
+  <div class="container">
+      <ion-label>Appareils</ion-label>
+      <!-- <ion-button (click)="startScan()">Scan</ion-button> -->
+
+  <ion-list>
+    <ion-item *ngFor="let device of devices" >
+      <ion-label>
+        <span><ion-icon name="phone-portrait-outline"></ion-icon>
+            <ion-item (click)="connectToDevice(device)"><ion-button >{{ device.name || device.id }}</ion-button> <ion-icon (click)="presentActionSheet()" slot="end"
+                    name="settings-outline"></ion-icon></ion-item></span>
+                    
+        <p>{{ device.id }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+      <!-- <span><ion-icon name="phone-portrait-outline"></ion-icon>
+          <ion-item><strong>nom_appareil</strong> <ion-icon (click)="presentActionSheet()" slot="end"
+                  name="settings-outline"></ion-icon></ion-item></span>
+      <span><ion-icon name="desktop-outline"></ion-icon>
+          <ion-item><strong>nom_appareil</strong> <ion-icon (click)="presentActionSheet()" slot="end"
+                  name="settings-outline"></ion-icon></ion-item></span>
+      <span><ion-icon name="phone-portrait-outline"></ion-icon><ion-item>
+              <strong>nom_appareil</strong> <ion-icon (click)="presentActionSheet()" slot="end"
+                  name="settings-outline"></ion-icon></ion-item></span>
+      <span><ion-icon name="desktop-outline"></ion-icon>
+          <ion-item><strong>nom_appareil</strong> <ion-icon (click)="presentActionSheet()" slot="end"
+                  name="settings-outline"></ion-icon></ion-item></span>
+      <span><ion-icon name="phone-portrait-outline"></ion-icon><ion-item>
+              <strong>nom_appareil</strong> <ion-icon (click)="presentActionSheet()" slot="end"
+                  name="settings-outline"></ion-icon></ion-item></span> -->
+  </div>
+  <!-- <ion-card color="primary"(click)="takePicture()"> 
+    <ion-card-header> share image</ion-card-header>
+
+    <img [src]="imageUrl"   (click)="presentActionSheet()"/>
+</ion-card>
+<ion-card>
+      
+</ion-card> -->
+ 
+<ion-button color="primary" (click)="takePicture()"> 
+    <ion-icon slot="start" name="camera"></ion-icon>Partager une image</ion-button>
+  
+    <ion-card *ngFor="let image of list_image">
+  
+
+   
+      <img src={{image}}>
+      <div  class="ion-text-center" fill="clear">
+        <ion-button  slot="start"  (click)="handleShare(image)"> 
+        <ion-icon name="share" color=""></ion-icon> partager</ion-button>
+      </div>
+    </ion-card> 
+
+      <!-- <ion-button *NgFor="let device of devices" (click)="scanDevices()">Scan Now 
+          {{ device.deviceName }}
+      </ion-button> -->
+      
+
+</ion-content>
