@@ -1,0 +1,75 @@
+<ion-content>
+  <div id="header">
+     
+          <ion-label>Device Name</ion-label>
+          <ion-note >{{ deviceName }}</ion-note>
+      
+      <ion-label>OS Version</ion-label>
+      <ion-note >{{ osVersion }}</ion-note>
+  </div>
+  <div  id="item_info">
+      <ion-list>
+          <ion-item>
+              <ion-label>
+                systeme d'exploitation
+              </ion-label>
+              <ion-note slot="end">{{ se }}</ion-note>
+            </ion-item>
+          <ion-item>
+            <ion-label>
+              Manufacturer
+            </ion-label>
+            <ion-note slot="end">{{ manufacturer }}</ion-note>
+          </ion-item>
+          <ion-item>
+            <ion-label>Device Model</ion-label>
+            <ion-note slot="end">{{ deviceModel }}</ion-note>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              Platform
+            </ion-label>
+            <ion-note slot="end">{{ platform }}</ion-note>
+          </ion-item>
+          <ion-item>
+          <ion-label>
+            Language
+          </ion-label>
+          <ion-note slot="end">{{ language }}</ion-note>
+        </ion-item>
+           <ion-item>
+            <ion-label>
+              Battery level
+            </ion-label>
+            <ion-note slot="end">{{ batteryLevel }}%</ion-note>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>
+              Battery charging status
+            </ion-label>
+            <ion-note slot="end">{{ chargingStatus }}</ion-note>
+          </ion-item>
+
+          <ion-item>
+              <ion-label>
+                Memoire utilise
+              </ion-label>
+              <ion-note slot="end">{{ memUsed }}</ion-note>
+            </ion-item>
+            <ion-item>
+              <ion-label>
+                memoire restante
+              </ion-label>
+              <ion-note slot="end">{{ realDiskFree }}</ion-note>
+            </ion-item>
+            <ion-item>
+              <ion-label>
+                memoire totale
+              </ion-label>
+              <ion-note slot="end">{{ realDiskTotal }}</ion-note>
+            </ion-item>
+            
+        </ion-list>
+  </div>
+</ion-content>
